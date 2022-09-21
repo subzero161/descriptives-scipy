@@ -140,7 +140,11 @@ seaborn.lmplot(y='WAGE', x='EDUCATION', data=data)
 #statsmodels.formula.api.rlm()
 
 ####3.1.5. Testing for interactions
-from statsmodels.formula.api import ols
+#from statsmodels.formula.api import ols
+import statsmodels as sm
+from statsmodels.api import ols
+ 
 result = data.ols(formula='WAGE ~ EDUCATION + GENDER + EDUCATION * GENDER',
                 data=data).fit()    
 print(result.summary())
+
